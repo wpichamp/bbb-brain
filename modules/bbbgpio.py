@@ -5,6 +5,7 @@ pin_types = ["in", "out"]
 states = [0, 1]
 uarts = {"/dev/ttyO1" : "BB-UART1"}
 
+
 class pin(object):
 
     def __init__(self, pin_name, config_state):
