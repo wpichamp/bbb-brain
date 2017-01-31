@@ -1,4 +1,4 @@
-from modules.standard_uart import port
+from dsupport.standard_uart import port
 
 from time import sleep
 
@@ -39,7 +39,6 @@ class Message(object):
         list = [self.target_id, self.checksum, self.blank, self.d0, self.d1, self.d2, self.d3, self.d4, self.d5,
                 self.d6]
         return bytearray(list)
-
 
 my_id = 0
 count = 0
