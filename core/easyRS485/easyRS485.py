@@ -17,7 +17,8 @@ class Network(object):
     def send_message(self, message):
         message_bytes = message.serialize()
         self.port.write(message_bytes)
-        return Message(self.port.read(10))
+        m = Message(self.port.read(10))
+        return m
 
 
 class Module(object):
@@ -29,7 +30,7 @@ class Module(object):
 
     def send_message(self, message):
         self.tag_message(message)
-        self.network.send_message(message)
+        return self.network.send_message(message)
 
     def tag_message(self, message):
         message.to_id = self.network_id
