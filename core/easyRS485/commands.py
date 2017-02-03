@@ -36,6 +36,7 @@ class Message(object):
     def serialize(self):
         self.__set_checksum__()
         array = [self.to_id, self.from_id, self.checksum, self.message_type, self.d0, self.d1, self.d2, self.d3, self.d4, self.d5]
+        # print array
         return bytearray(array)
 
 

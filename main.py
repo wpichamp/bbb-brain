@@ -7,6 +7,8 @@ network = Network(port)
 left_arduino = Module(network, 1)
 right_arduino = Module(network, 2)
 
+print "Starting Handshake"
+
 while True:
 
     left_response_message = left_arduino.send_message(GetStatus())
