@@ -3,7 +3,8 @@ from serial import Serial
 good_pins = [48, 49, 117, 115, 20, 60, 112, 66, 69, 45, 47, 27, 67, 68, 44, 26, 46, 65, 61]
 pin_types = ["in", "out"]
 states = [0, 1]
-uarts = {"/dev/ttyO1" : "BB-UART1"}
+uarts = {"/dev/ttyO1" : "BB-UART1", "/dev/ttyO2" : "BB-UART2"}
+
 
 class pin(object):
 
@@ -46,6 +47,7 @@ class pin(object):
 
         with open("/sys/class/gpio/gpio" + str(self.pin_name) + "/value" , "w") as file:
             file.write(str(state))
+
 
 class UART(object):
 
